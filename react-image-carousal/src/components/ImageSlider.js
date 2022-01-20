@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 
-const ImageSlider = ({ slides }) => {
+const ImageSlider = ({ slides, animationType }) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
 
   const addAnimationClass = (index) => {
-    return index === current ? "slide active" : "slide";
+    let className = index === current ? `${animationType} active` : `${animationType}`;
+
+    return className;
   };
 
   const nextSlide = () => {

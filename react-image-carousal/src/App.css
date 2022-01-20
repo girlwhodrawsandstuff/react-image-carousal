@@ -37,12 +37,23 @@
   user-select: none;
 }
 
-.slide {
+.fade {
   opacity: 0;
   transition-duration: 1s ease;
 }
 
-.slide.active {
+.fade.active {
   opacity: 1;
   transition-duration: 1s;
+}
+
+.scale {
+  opacity: 0;
+  transition: 1s;
+  transform: scale(0.5);
+}
+
+.scale.active {
+  opacity: 1;
+  transform: scale(1);
 }
