@@ -6,6 +6,10 @@ const ImageSlider = ({ slides }) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
 
+  const addAnimationClass = (index) => {
+    return index === current ? "slide active" : "slide"
+  }
+
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
@@ -27,7 +31,7 @@ const ImageSlider = ({ slides }) => {
       {SliderData.map((slide, index) => {
         return (
           <div
-            className={index === current ? "slide active" : "slide"}
+            className={addAnimationClass(index)}
             key={index}
           >
             {index === current && (
