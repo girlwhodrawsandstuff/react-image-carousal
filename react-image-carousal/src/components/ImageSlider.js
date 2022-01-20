@@ -1,7 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { SliderData } from './SliderData';
 
 const ImageSlider = () => {
-  return <div>Images</div>;
+const [current, setCurrent] = useState(0)
+
+  return (
+      <>
+        {SliderData.map((slide, index) => {
+            return <img src={slide.image} alt=""/>
+        })}
+      </>
+  )
 };
 
 export default ImageSlider;
