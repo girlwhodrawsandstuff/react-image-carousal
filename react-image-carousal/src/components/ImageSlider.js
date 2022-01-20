@@ -6,8 +6,8 @@ const ImageSlider = ({ slides }) => {
   const length = slides.length;
 
   const addAnimationClass = (index) => {
-    return index === current ? "slide active" : "slide"
-  }
+    return index === current ? "slide active" : "slide";
+  };
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
@@ -24,22 +24,21 @@ const ImageSlider = ({ slides }) => {
   }
 
   return (
-    <section className="slider">
-      <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
-      <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} />
-      {slides.map((slide, index) => {
-        return (
-          <div
-            className={addAnimationClass(index)}
-            key={slides.id}
-          >
-            {index === current && (
-              <img src={slide.image} alt="3D images" className="image" />
-            )}
-          </div>
-        );
-      })}
-    </section>
+    <div className="container">
+      <section className="slider">
+        <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
+        <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} />
+        {slides.map((slide, index) => {
+          return (
+            <div className={addAnimationClass(index)} key={slides.id}>
+              {index === current && (
+                <img src={slide.image} alt="3D images" className="image" />
+              )}
+            </div>
+          );
+        })}
+      </section>
+    </div>
   );
 };
 
