@@ -32,7 +32,7 @@ const ImageSlider = ({ slides }) => {
         return (
           <div
             className={addAnimationClass(index)}
-            key={index}
+            key={slides.id}
           >
             {index === current && (
               <img src={slide.image} alt="3D images" className="image" />
