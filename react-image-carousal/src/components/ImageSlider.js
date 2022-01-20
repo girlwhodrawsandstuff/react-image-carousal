@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { SliderData } from "./SliderData";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 
 const ImageSlider = ({ slides }) => {
@@ -28,7 +27,7 @@ const ImageSlider = ({ slides }) => {
     <section className="slider">
       <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
       <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} />
-      {SliderData.map((slide, index) => {
+      {slides.map((slide, index) => {
         return (
           <div
             className={addAnimationClass(index)}
