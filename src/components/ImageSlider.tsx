@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 
-const ImageSlider = ({ slides, animationType }) => {
+interface ImageSliderProps {
+  slides: { image: string; id: string }[];
+  animationType: "rotate" | "fade" | "scale";
+}
+
+const ImageSlider = ({ slides, animationType }: ImageSliderProps) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
 
-  const addAnimationClass = (index) => {
-    let className = index === current ? `${animationType} active` : `${animationType}`;
+  const addAnimationClass = (index: number) => {
+    let className =
+      index === current ? `${animationType} active` : `${animationType}`;
 
     return className;
   };
@@ -31,7 +37,7 @@ const ImageSlider = ({ slides, animationType }) => {
         <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
         {slides.map((slide, index) => {
           return (
-            <div className={addAnimationClass(index)} key={slides.id}>
+            <div className={addAnimationClass(index)} key={slide.id}>
               {index === current && (
                 <img src={slide.image} alt="3D images" className="image" />
               )}
