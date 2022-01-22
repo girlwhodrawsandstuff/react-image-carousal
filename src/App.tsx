@@ -3,7 +3,7 @@ import ImageSlider from './components/ImageSlider';
 import { SliderData } from './components/SliderData';
 
 function App() {
-  return <ImageSlider slides={SliderData} animationType="rotate" />
+  return <ImageSlider slides={SliderData} animationType="fade" />
 
 }
 
