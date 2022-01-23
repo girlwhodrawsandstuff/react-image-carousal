@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import '../App.css';
 
-interface ImageSliderProps {
+export interface ImageSliderProps {
   slides: { image: string; id: string }[];
   animationType: "rotate" | "fade" | "scale";
   borderType: "solid" | "none";
