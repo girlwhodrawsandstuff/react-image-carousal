@@ -8,7 +8,6 @@ test("Renders all elements", () => {
     <ImageSlider
       slides={SliderData}
       animationType="fade"
-      borderType="solid"
       autoPlay={false}
     />
   );
@@ -35,7 +34,6 @@ test("Clicking on right arrow button changes the image", () => {
     <ImageSlider
       slides={SliderData}
       animationType="fade"
-      borderType="solid"
       autoPlay={false}
     />
   );
@@ -66,7 +64,6 @@ test("Clicking on left arrow button changes image", () => {
     <ImageSlider
     slides={SliderData}
     animationType="fade"
-    borderType="solid"
     autoPlay={false}
   />
   );
