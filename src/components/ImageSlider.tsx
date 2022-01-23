@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
-import '../App.css';
+import "../App.css";
 
 export interface ImageSliderProps {
   slides: { image: string; id: string }[];
@@ -10,30 +10,35 @@ export interface ImageSliderProps {
   autoPlayDelay: number;
 }
 
-
-const ImageSlider = ({ slides, animationType, borderType, autoPlay, autoPlayDelay }: ImageSliderProps) => {
+const ImageSlider = ({
+  slides,
+  animationType,
+  borderType,
+  autoPlay,
+  autoPlayDelay,
+}: ImageSliderProps) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
   const timeoutRef: any = React.useRef(null);
 
   function resetTimeout() {
     if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current)
+      clearTimeout(timeoutRef.current);
     }
   }
 
   React.useEffect(() => {
     if (autoPlay) {
-      resetTimeout()
+      resetTimeout();
       timeoutRef.current = setTimeout(() => nextSlide(), autoPlayDelay);
     }
-  }, [current, autoPlay, autoPlayDelay])
+  }, [current, autoPlay, autoPlayDelay]);
 
   const addClassName = (index: number) => {
     let animationName =
       index === current ? `${animationType} active` : `${animationType}`;
 
-    return animationName + ' ' + `${borderType}`;
+    return animationName + " " + `${borderType}`;
   };
 
   const nextSlide = () => {

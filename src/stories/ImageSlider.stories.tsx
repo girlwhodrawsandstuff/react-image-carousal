@@ -1,20 +1,20 @@
-import ImageSlider, { ImageSliderProps } from '../components/ImageSlider';
-import { SliderData } from '../components/SliderData';
-import { Story } from "@storybook/react"
+import ImageSlider, { ImageSliderProps } from "../components/ImageSlider";
+import { SliderData } from "../components/SliderData";
+import { Story } from "@storybook/react";
 
 export default {
-    title: "Image Slider",
-    component: ImageSlider
-}
+  title: "Image Slider",
+  component: ImageSlider,
+};
 
-const Template: Story<ImageSliderProps> = (args) => <ImageSlider {...args} />
+const Template: Story<ImageSliderProps> = (args) => <ImageSlider {...args} />;
 
-export const Slider = Template.bind({})
+export const Slider = Template.bind({});
 
 Slider.args = {
-    slides: SliderData,
-    animationType: "rotate",
-    borderType: "solid",
-    autoPlay: false,
-    autoPlayDelay: 2000,
-}
+  slides: SliderData,
+  animationType: "rotate",
+  borderType: "solid",
+  autoPlay: false,
+  autoPlayDelay: 2000,
+};
