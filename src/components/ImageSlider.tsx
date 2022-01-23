@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import '../App.css';
 
@@ -8,9 +8,16 @@ export interface ImageSliderProps {
   borderType: "solid" | "none";
 }
 
+
 const ImageSlider = ({ slides, animationType, borderType }: ImageSliderProps) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
+
+  React.useEffect(() => {
+    setInterval(function() {
+      nextSlide()
+    }, 5000);
+  })
 
   const addClassName = (index: number) => {
     let animationName =
