@@ -22,11 +22,11 @@ const ImageSlider = ({ slides, animationType, borderType, autoPlay }: ImageSlide
   }
 
   React.useEffect(() => {
-    resetTimeout()
     if (autoPlay) {
+      resetTimeout()
       timeoutRef.current = setTimeout(() => nextSlide(), 2000);
     }
-  }, [current])
+  }, [current, autoPlay])
 
   const addClassName = (index: number) => {
     let animationName =
