@@ -7,7 +7,6 @@ function App() {
     <ImageSlider
       slides={SliderData}
       animationType="fade"
-      borderType="solid"
       autoPlay={false}
       autoPlayDelay={2000}
     />

@@ -5,7 +5,6 @@ import "../App.css";
 export interface ImageSliderProps {
   slides: { image: string; id: string }[];
   animationType: "rotate" | "fade" | "scale";
-  borderType: "solid" | "none";
   autoPlay: boolean;
   autoPlayDelay?: number;
 }
@@ -13,7 +12,6 @@ export interface ImageSliderProps {
 const ImageSlider = ({
   slides,
   animationType,
-  borderType,
   autoPlay,
   autoPlayDelay,
 }: ImageSliderProps) => {
@@ -38,7 +36,7 @@ const ImageSlider = ({
     let animationName =
       index === current ? `${animationType} active` : `${animationType}`;
 
-    return animationName + " " + `${borderType}`;
+    return animationName;
   };
 
   const nextSlide = () => {

@@ -68,18 +68,3 @@
   opacity: 1;
   transform: rotate(360deg);
 }
-
-.solid {
-  border: 2px solid black;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.none {
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
