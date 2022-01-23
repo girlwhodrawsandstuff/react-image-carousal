@@ -12,12 +12,18 @@ export interface ImageSliderProps {
 const ImageSlider = ({ slides, animationType, borderType }: ImageSliderProps) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
+  const timeoutRef: any = React.useRef(null);
+
+  function resetTimeout() {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+    }
+  }
 
   React.useEffect(() => {
-    setInterval(function() {
-      nextSlide()
-    }, 5000);
-  })
+    resetTimeout()
+    timeoutRef.current = setTimeout(() => nextSlide(), 2000);
+  }, [current])
 
   const addClassName = (index: number) => {
     let animationName =
