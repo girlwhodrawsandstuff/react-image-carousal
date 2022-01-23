@@ -14,7 +14,6 @@ export const Slider = Template.bind({});
 Slider.args = {
   slides: SliderData,
   animationType: "rotate",
-  borderType: "solid",
   autoPlay: false,
   autoPlayDelay: 2000,
 };
