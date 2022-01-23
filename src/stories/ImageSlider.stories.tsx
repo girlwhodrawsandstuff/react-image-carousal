@@ -15,4 +15,5 @@ Slider.args = {
     slides: SliderData,
     animationType: "rotate",
     borderType: "solid",
+    autoPlay: false,
 }
