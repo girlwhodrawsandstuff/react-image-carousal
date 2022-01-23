@@ -16,4 +16,5 @@ Slider.args = {
     animationType: "rotate",
     borderType: "solid",
     autoPlay: false,
+    autoPlayDelay: 2000,
 }

@@ -7,10 +7,11 @@ export interface ImageSliderProps {
   animationType: "rotate" | "fade" | "scale";
   borderType: "solid" | "none";
   autoPlay: boolean;
+  autoPlayDelay: number;
 }
 
 
-const ImageSlider = ({ slides, animationType, borderType, autoPlay }: ImageSliderProps) => {
+const ImageSlider = ({ slides, animationType, borderType, autoPlay, autoPlayDelay }: ImageSliderProps) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
   const timeoutRef: any = React.useRef(null);
@@ -24,9 +25,9 @@ const ImageSlider = ({ slides, animationType, borderType, autoPlay }: ImageSlide
   React.useEffect(() => {
     if (autoPlay) {
       resetTimeout()
-      timeoutRef.current = setTimeout(() => nextSlide(), 2000);
+      timeoutRef.current = setTimeout(() => nextSlide(), autoPlayDelay);
     }
-  }, [current, autoPlay])
+  }, [current, autoPlay, autoPlayDelay])
 
   const addClassName = (index: number) => {
     let animationName =
