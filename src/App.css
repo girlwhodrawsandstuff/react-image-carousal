@@ -68,3 +68,12 @@
   opacity: 1;
   transform: rotate(360deg);
 }
+
+.solid {
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.none {
+  border: none;
+}
