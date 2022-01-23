@@ -7,7 +7,7 @@ export interface ImageSliderProps {
   animationType: "rotate" | "fade" | "scale";
   borderType: "solid" | "none";
   autoPlay: boolean;
-  autoPlayDelay: number;
+  autoPlayDelay?: number;
 }
 
 const ImageSlider = ({
@@ -56,7 +56,9 @@ const ImageSlider = ({
   return (
     <div className="container">
       <section className="slider">
-        <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
+        <button title="left-arrow" onClick={prevSlide}>
+          <FaArrowAltCircleLeft className="left-arrow" />
+        </button>
         {slides.map((slide, index) => {
           return (
             <div className={addClassName(index)} key={slide.id}>
@@ -66,7 +68,9 @@ const ImageSlider = ({
             </div>
           );
         })}
-        <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} />
+        <button title="right-arrow" onClick={nextSlide}>
+          <FaArrowAltCircleRight className="right-arrow" />
+        </button>
       </section>
     </div>
   );
