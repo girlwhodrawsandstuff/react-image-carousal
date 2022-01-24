@@ -3,7 +3,7 @@ This is a React JS image carousel. It's managed on Storybook JS.
 
 ## Available Scripts
 
-To start the project, run:
+To start the project, download all dependencies and run:
 
 ### `npm start`
 
