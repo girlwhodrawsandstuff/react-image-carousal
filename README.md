@@ -1,5 +1,5 @@
 # React Image Carousel
-This is a React JS image carousel. It's managed on Storybook JS. 
+This is a React JS and TypeScript based image carousel. It's managed on Storybook JS. 
 
 ## Available Scripts
 
